@@ -1,3 +1,5 @@
+
+import "./styles/globals.css";
 export const metadata = {
   title: "Study Center Platform",
   description: "A platform to help parents assist children with homework.",

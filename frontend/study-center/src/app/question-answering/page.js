@@ -22,7 +22,7 @@ export default function QuestionAnsweringPage() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center h-screen">
+    <div className="flex flex-col items-center justify-center h-screen">
       <h1 className="text-2xl font-bold mb-4">Question Answering</h1>
       <textarea
         className="w-3/4 h-24 p-2 border border-gray-300 rounded-lg mb-4"
