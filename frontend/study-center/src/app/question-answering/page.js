@@ -1,42 +1,53 @@
 "use client";
 
 import { useState } from "react";
-import axios from "axios";
 
 export default function QuestionAnsweringPage() {
   const [context, setContext] = useState("");
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
 
-  const handleQuestionAnswering = async () => {
+  const handleQA = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/qa", { context, question });
-      setAnswer(response.data.answer);
+      const response = await fetch("http://localhost:5000/qa", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ context, question }),
+      });
+      const data = await response.json();
+      setAnswer(data.answer);
     } catch (error) {
-      console.error(error);
+      console.error("Error fetching answer:", error);
     }
   };
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>Question Answering</h1>
+    <div className="flex flex-col justify-center items-center h-screen">
+      <h1 className="text-2xl font-bold mb-4">Question Answering</h1>
       <textarea
-        placeholder="Enter context"
+        className="w-3/4 h-24 p-2 border border-gray-300 rounded-lg mb-4"
+        placeholder="Enter context (e.g., a paragraph)"
         value={context}
         onChange={(e) => setContext(e.target.value)}
-        style={{ width: "100%", height: "100px", margin: "10px 0" }}
       />
       <input
         type="text"
-        placeholder="Enter question"
+        className="w-3/4 p-2 border border-gray-300 rounded-lg mb-4"
+        placeholder="Enter your question"
         value={question}
         onChange={(e) => setQuestion(e.target.value)}
-        style={{ width: "100%", margin: "10px 0", padding: "10px" }}
       />
-      <button onClick={handleQuestionAnswering} style={{ padding: "10px 20px", background: "#007bff", color: "#fff" }}>
+      <button
+        onClick={handleQA}
+        className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-800"
+      >
         Get Answer
       </button>
-      {answer && <p>Answer: {answer}</p>}
+      {answer && (
+        <p className="mt-4 bg-gray-100 p-4 rounded-lg w-3/4 text-center">
+          <strong>Answer:</strong> {answer}
+        </p>
+      )}
     </div>
   );
 }
