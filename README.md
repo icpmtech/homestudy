@@ -12,16 +12,21 @@ study-center/
 │   ├── requirements.txt    # Backend dependencies
 │   └── models/             # Directory for pre-trained models or custom logic
 ├── frontend/               # Frontend folder (React app)
-│   ├── public/             # Public assets for React
-│   │   ├── index.html      # Main HTML file for React app
-│   │   └── favicon.ico     # App favicon
-│   ├── src/                # React source files
-│   │   ├── App.js          # Main React component
-│   │   ├── index.js        # Entry point for React app
-│   │   ├── App.css         # Custom styles for the app
-│   │   ├── components/     # React components (if needed)
-│   │   └── assets/         # Static files (e.g., images, fonts)
-│   └── package.json        # Frontend dependencies and scripts
+study-center-next/
+├── pages/                 # Next.js pages directory
+│   ├── index.js           # Main entry page
+│   ├── question-answering.js  # Question Answering page
+│   ├── summarization.js   # Summarization page
+│   ├── translation.js     # Translation page
+├── components/            # Reusable React components
+│   ├── TaskCard.js        # Component for displaying task UI
+│   └── AudioPlayer.js     # Optional: Component for audio playback
+├── styles/                # CSS modules or global styles
+│   ├── globals.css        # Global styles
+│   └── TaskCard.module.css # Task-specific styles
+├── public/                # Static assets (images, etc.)
+├── package.json           # Project dependencies
+└── next.config.js         # Next.js configuration
 ├── .gitignore              # Ignore unnecessary files in version control
 ├── README.md               # Documentation for the project
 └── start.sh                # Script to run both backend and frontend
