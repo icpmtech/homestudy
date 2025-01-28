@@ -10,7 +10,7 @@ CORS(app)
 # Load Hugging Face Models
 question_answering = pipeline("question-answering", model="distilbert-base-cased-distilled-squad")
 summarization = pipeline("summarization", model="facebook/bart-large-cnn")
-translation = pipeline("translation_en_to_pt", model="Helsinki-NLP/opus-mt-en-pt")
+translation = pipeline("translation", model="Helsinki-NLP/opus-mt-tc-big-en-pt")
 
 @app.route("/qa", methods=["POST"])
 def qa():

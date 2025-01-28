@@ -1,0 +1,25 @@
+# Flask framework and CORS for API
+Flask==2.3.3
+Flask-Cors==3.0.10
+
+# Hugging Face Transformers for NLP models
+transformers
+torch
+sentencepiece  # Required for some Hugging Face models
+
+# gTTS for Text-to-Speech functionality
+gTTS==2.3.2
+
+# Fast tokenization (optional for performance with Hugging Face models)
+tokenizer
+
+# Wav2Vec2 or ASR models (if needed for Speech-to-Text, optional)
+datasets
+
+# Requests library for making HTTP requests (if used internally)
+requests==2.31.0
+
+# Python-dotenv for environment variable management (optional)
+python-dotenv==1.0.0
+
+gunicorn==21.2.0
