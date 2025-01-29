@@ -1,0 +1,349 @@
+2025-01-29 15:11:44,199 - INFO - Loading Hugging Face models...
+2025-01-29 15:12:12,323 - INFO - Models loaded successfully.
+2025-01-29 15:12:12,334 - INFO - Starting Flask API...
+2025-01-29 15:12:12,475 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-29 15:12:12,475 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-29 15:12:12,480 - INFO -  * Restarting with stat
+2025-01-29 15:12:44,629 - INFO - Loading Hugging Face models...
+2025-01-29 15:13:11,750 - INFO - Models loaded successfully.
+2025-01-29 15:13:11,759 - INFO - Starting Flask API...
+2025-01-29 15:13:11,836 - WARNING -  * Debugger is active!
+2025-01-29 15:13:11,862 - INFO -  * Debugger PIN: 812-164-213
+2025-01-29 15:13:15,150 - INFO - Extracted problem from image: 2/
+2025-01-29 15:13:15,164 - ERROR - Math solving error: Sympify of expression 'could not parse '2/'' failed, because of exception being raised:
+SyntaxError: invalid syntax (<string>, line 1)
+2025-01-29 15:13:15,164 - INFO - Math problem solved: 2/ = Could not solve the problem
+2025-01-29 15:13:15,170 - INFO - 127.0.0.1 - - [29/Jan/2025 15:13:15] "POST /solve-math HTTP/1.1" 200 -
+2025-01-29 15:22:34,794 - INFO -  * Detected change in 'd:\\homestudy\\backend\\app.py', reloading
+2025-01-29 15:22:36,862 - INFO -  * Restarting with stat
+2025-01-29 15:23:05,461 - INFO - Loading Hugging Face models...
+2025-01-29 15:25:08,721 - INFO - Loading Hugging Face models...
+2025-01-29 15:25:16,792 - INFO - Models loaded successfully.
+2025-01-29 15:46:35,405 - INFO - OCR model (printed text) loaded successfully.
+2025-01-29 15:46:35,407 - INFO - Starting Flask API...
+2025-01-29 15:46:35,471 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-29 15:46:35,471 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-29 15:46:35,475 - INFO -  * Restarting with stat
+2025-01-29 15:47:06,649 - INFO - Loading Hugging Face models...
+2025-01-29 15:47:22,632 - INFO - Models loaded successfully.
+2025-01-29 15:47:34,021 - INFO - OCR model (printed text) loaded successfully.
+2025-01-29 15:47:34,029 - INFO - Starting Flask API...
+2025-01-29 15:47:34,130 - WARNING -  * Debugger is active!
+2025-01-29 15:47:34,145 - INFO -  * Debugger PIN: 812-164-213
+2025-01-29 15:58:11,007 - INFO - Extracted problem from image: =
+2025-01-29 15:58:11,041 - ERROR - Math solving error: Sympify of expression 'could not parse '='' failed, because of exception being raised:
+SyntaxError: invalid syntax (<string>, line 1)
+2025-01-29 15:58:11,041 - INFO - Math problem solved: = = Could not solve the problem
+2025-01-29 15:58:11,044 - INFO - 127.0.0.1 - - [29/Jan/2025 15:58:11] "POST /solve-math HTTP/1.1" 200 -
+2025-01-29 16:02:30,002 - INFO - Extracted problem from image: 1+2=
+2025-01-29 16:02:30,015 - ERROR - Math solving error: Sympify of expression 'could not parse '1+2='' failed, because of exception being raised:
+SyntaxError: invalid syntax (<string>, line 1)
+2025-01-29 16:02:30,015 - INFO - Math problem solved: 1+2= = Could not solve the problem
+2025-01-29 16:02:30,016 - INFO - 127.0.0.1 - - [29/Jan/2025 16:02:30] "POST /solve-math HTTP/1.1" 200 -
+2025-01-29 16:06:33,957 - INFO - Extracted problem from image: 1+2=X
+2025-01-29 16:06:33,958 - ERROR - Math solving error: Sympify of expression 'could not parse '1+2=X'' failed, because of exception being raised:
+SyntaxError: invalid syntax (<string>, line 1)
+2025-01-29 16:06:33,958 - INFO - Math problem solved: 1+2=X = Could not solve the problem
+2025-01-29 16:06:33,959 - INFO - 127.0.0.1 - - [29/Jan/2025 16:06:33] "POST /solve-math HTTP/1.1" 200 -
+2025-01-29 16:07:11,789 - INFO -  * Detected change in 'd:\\homestudy\\backend\\app.py', reloading
+2025-01-29 16:07:14,420 - INFO -  * Restarting with stat
+2025-01-29 16:07:45,408 - INFO - Loading Hugging Face models...
+2025-01-29 16:08:04,326 - INFO - Models loaded successfully.
+2025-01-29 16:08:04,335 - INFO - Starting Flask API...
+2025-01-29 16:08:04,406 - WARNING -  * Debugger is active!
+2025-01-29 16:08:04,419 - INFO -  * Debugger PIN: 812-164-213
+2025-01-29 16:09:58,947 - INFO - Extracted text from image: 1+2=X
+2025-01-29 16:09:58,949 - INFO - 127.0.0.1 - - [29/Jan/2025 16:09:58] "POST /extract-text HTTP/1.1" 200 -
+2025-01-29 16:10:10,045 - INFO - Extracted text from image: 1+2=X
+2025-01-29 16:10:10,045 - INFO - 127.0.0.1 - - [29/Jan/2025 16:10:10] "POST /extract-text HTTP/1.1" 200 -
+2025-01-29 16:10:13,291 - INFO - Extracted problem from image: 1+2=X
+2025-01-29 16:10:13,314 - ERROR - Math solving error: Sympify of expression 'could not parse '1+2=X'' failed, because of exception being raised:
+SyntaxError: invalid syntax (<string>, line 1)
+2025-01-29 16:10:13,314 - INFO - Math problem solved: 1+2=X = Could not solve the problem
+2025-01-29 16:10:13,314 - INFO - 127.0.0.1 - - [29/Jan/2025 16:10:13] "POST /solve-math HTTP/1.1" 200 -
+2025-01-29 16:10:44,569 - INFO - Extracted text from image: 1+2=X
+2025-01-29 16:10:44,569 - INFO - 127.0.0.1 - - [29/Jan/2025 16:10:44] "POST /extract-text HTTP/1.1" 200 -
+2025-01-29 16:10:53,826 - INFO - Extracted text from image: =
+2025-01-29 16:10:53,827 - INFO - 127.0.0.1 - - [29/Jan/2025 16:10:53] "POST /extract-text HTTP/1.1" 200 -
+2025-01-29 16:11:00,874 - INFO - Extracted text from image: :
+2025-01-29 16:11:00,875 - INFO - 127.0.0.1 - - [29/Jan/2025 16:11:00] "POST /extract-text HTTP/1.1" 200 -
+2025-01-29 16:13:42,133 - INFO - 127.0.0.1 - - [29/Jan/2025 16:13:42] "[33mPOST /solve-math-model HTTP/1.1[0m" 404 -
+2025-01-29 16:15:08,756 - INFO -  * Detected change in 'd:\\homestudy\\backend\\app.py', reloading
+2025-01-29 16:15:10,667 - INFO -  * Restarting with stat
+2025-01-29 16:15:42,170 - INFO - Loading Hugging Face models...
+2025-01-29 16:16:01,651 - INFO - All models loaded successfully.
+2025-01-29 16:16:01,653 - INFO - Starting Flask API (model-based math solver + OCR).
+2025-01-29 16:16:01,762 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-29 16:16:01,762 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-29 16:16:01,765 - INFO -  * Restarting with stat
+2025-01-29 16:16:29,218 - INFO - Loading Hugging Face models...
+2025-01-29 16:16:52,993 - INFO - All models loaded successfully.
+2025-01-29 16:16:52,997 - INFO - Starting Flask API (model-based math solver + OCR).
+2025-01-29 16:16:53,027 - WARNING -  * Debugger is active!
+2025-01-29 16:16:53,042 - INFO -  * Debugger PIN: 812-164-213
+2025-01-29 16:18:28,089 - INFO - Math problem recognized: 1+2=X
+2025-01-29 16:18:56,194 - INFO - Math model solution: 1+2=X
+
+The answer is 3.
+
+The question is asking for the value of X.
+
+So, X = 3.
+
+Therefore, the value of X is 3.
+
+The answer is 3.
+
+The
+2025-01-29 16:18:56,254 - INFO - 127.0.0.1 - - [29/Jan/2025 16:18:56] "POST /solve-math-model HTTP/1.1" 200 -
+2025-01-29 16:19:08,473 - INFO - Math problem recognized: 1+2=X
+2025-01-29 16:19:25,623 - INFO - Math model solution: 1+2=X
+
+The answer is 3.
+
+The question is asking for the value of X.
+
+So, X = 3.
+
+Therefore, the value of X is 3.
+
+The answer is 3.
+
+The
+2025-01-29 16:19:25,623 - INFO - 127.0.0.1 - - [29/Jan/2025 16:19:25] "POST /solve-math-model HTTP/1.1" 200 -
+2025-01-29 16:34:27,414 - INFO - Math problem recognized: =
+2025-01-29 16:34:42,991 - INFO - Math problem recognized: =
+2025-01-29 16:34:49,711 - INFO - Math model solution: = 100000000000000000000000000000000000000000000000000000000
+2025-01-29 16:34:49,713 - INFO - 127.0.0.1 - - [29/Jan/2025 16:34:49] "POST /solve-math-model HTTP/1.1" 200 -
+2025-01-29 16:35:04,452 - INFO - Math model solution: = 100000000000000000000000000000000000000000000000000000000
+2025-01-29 16:35:04,452 - INFO - 127.0.0.1 - - [29/Jan/2025 16:35:04] "POST /solve-math-model HTTP/1.1" 200 -
+2025-01-29 16:35:43,169 - INFO - Math problem recognized: :
+2025-01-29 16:36:01,230 - INFO - Math model solution: : 100000000000000000000000000000000000000000000000000000000
+2025-01-29 16:36:01,231 - INFO - 127.0.0.1 - - [29/Jan/2025 16:36:01] "POST /solve-math-model HTTP/1.1" 200 -
+2025-01-29 16:36:30,033 - INFO -  * Detected change in 'd:\\homestudy\\backend\\app.py', reloading
+2025-01-29 16:36:33,420 - INFO -  * Restarting with stat
+2025-01-29 16:37:02,900 - INFO - Loading Hugging Face models...
+2025-01-29 16:37:22,187 - INFO - All models loaded successfully.
+2025-01-29 16:37:22,190 - INFO - Starting Flask API (model-based math solver + OCR).
+2025-01-29 16:37:22,211 - WARNING -  * Debugger is active!
+2025-01-29 16:37:22,221 - INFO -  * Debugger PIN: 812-164-213
+2025-01-29 16:37:22,475 - INFO - 127.0.0.1 - - [29/Jan/2025 16:37:22] "OPTIONS /solve-text-model HTTP/1.1" 200 -
+2025-01-29 16:37:22,476 - INFO - 127.0.0.1 - - [29/Jan/2025 16:37:22] "OPTIONS /solve-text-model HTTP/1.1" 200 -
+2025-01-29 16:37:22,789 - INFO - Typed math problem: 2+2=X
+2025-01-29 16:37:47,536 - INFO - Typed math solution: 2+2=X
+
+2+2=X
+
+2+2=X
+
+2+2=X
+
+2+2=X
+
+2+2=X
+
+2+2=X
+
+2+2=X
+
+2+
+2025-01-29 16:37:47,550 - INFO - 127.0.0.1 - - [29/Jan/2025 16:37:47] "POST /solve-text-model HTTP/1.1" 200 -
+2025-01-29 16:40:35,246 - INFO - 127.0.0.1 - - [29/Jan/2025 16:40:35] "OPTIONS /solve-text-model HTTP/1.1" 200 -
+2025-01-29 16:40:35,487 - INFO - Typed math problem: 1+2=x
+2025-01-29 16:40:50,708 - INFO - Typed math solution: 1+2=x
+
+1+2=x
+
+x=3
+
+So, the value of x is 3.
+
+The value of x is 3.
+
+The value of x is 3.
+
+The value of x is 3
+2025-01-29 16:40:50,708 - INFO - 127.0.0.1 - - [29/Jan/2025 16:40:50] "POST /solve-text-model HTTP/1.1" 200 -
+2025-01-29 16:46:34,323 - INFO - 127.0.0.1 - - [29/Jan/2025 16:46:34] "OPTIONS /solve-text-model HTTP/1.1" 200 -
+2025-01-29 16:46:34,590 - INFO - Typed math problem: 2+6/4
+2025-01-29 16:46:49,383 - INFO - Typed math solution: 2+6/4=10/4=2.5
+
+So, the value of x is 2.5.
+
+The value of y is 2.5.
+
+The value of z is 2.5.
+
+The value of w
+2025-01-29 16:46:49,383 - INFO - 127.0.0.1 - - [29/Jan/2025 16:46:49] "POST /solve-text-model HTTP/1.1" 200 -
+2025-01-29 16:59:46,901 - INFO - Math problem recognized: 1+2=X
+2025-01-29 17:00:03,357 - INFO - Math model solution: 1+2=X
+
+The answer is 3.
+
+The question is asking for the value of X.
+
+So, X = 3.
+
+Therefore, the value of X is 3.
+
+The answer is 3.
+
+The
+2025-01-29 17:00:03,358 - INFO - 127.0.0.1 - - [29/Jan/2025 17:00:03] "POST /solve-math-model HTTP/1.1" 200 -
+2025-01-29 17:02:18,190 - INFO - Math problem recognized: :
+2025-01-29 17:02:34,349 - INFO - Math model solution: : 100000000000000000000000000000000000000000000000000000000
+2025-01-29 17:02:34,350 - INFO - 127.0.0.1 - - [29/Jan/2025 17:02:34] "POST /solve-math-model HTTP/1.1" 200 -
+2025-01-29 17:10:29,054 - INFO - Math problem recognized: -
+2025-01-29 17:10:45,736 - INFO - Math model solution: - 1)
+
+
+The first term of the sequence is 1, and the common ratio is 2.
+
+The nth term of the sequence is given by the formula:
+
+a_n = a_1 * r^(n-1)
+
+where
+2025-01-29 17:10:45,736 - INFO - 127.0.0.1 - - [29/Jan/2025 17:10:45] "POST /solve-math-model HTTP/1.1" 200 -
+2025-01-29 17:19:29,605 - INFO - Math problem recognized: TAX
+2025-01-29 17:19:47,187 - INFO - Math model solution: TAXES.
+
+The taxes are calculated as follows:
+
+1. The first 10000000000000000000000000000000000000
+2025-01-29 17:19:47,187 - INFO - 127.0.0.1 - - [29/Jan/2025 17:19:47] "POST /solve-math-model HTTP/1.1" 200 -
+2025-01-29 17:20:39,874 - INFO - Math problem recognized: L
+2025-01-29 17:20:56,097 - INFO - Math model solution: L'Hôpital's Rule.
+
+The rule states that if the limit of a function as x approaches a certain value is equal to the limit of the function as x approaches the same value from the other side, then the limit of the function as x approaches the value is
+2025-01-29 17:20:56,099 - INFO - 127.0.0.1 - - [29/Jan/2025 17:20:56] "POST /solve-math-model HTTP/1.1" 200 -
+2025-01-29 17:27:55,346 - INFO - Math problem recognized: :
+2025-01-29 17:28:12,829 - INFO - Math model solution: : 100000000000000000000000000000000000000000000000000000000
+2025-01-29 17:28:12,830 - INFO - 127.0.0.1 - - [29/Jan/2025 17:28:12] "POST /solve-math-model HTTP/1.1" 200 -
+2025-01-29 17:37:59,655 - INFO - Math problem recognized: EAMER
+2025-01-29 17:38:25,160 - INFO - Math model solution: EAMERICA
+
+The first step in solving this problem is to find the value of the variable $x$. To do this, we can use the equation $x = 2000 - 1000(1 + \frac{1}{2} +
+2025-01-29 17:38:25,161 - INFO - 127.0.0.1 - - [29/Jan/2025 17:38:25] "POST /solve-math-model HTTP/1.1" 200 -
+2025-01-29 17:38:43,525 - INFO - Math problem recognized: SATL=%
+2025-01-29 17:39:10,148 - INFO - Math model solution: SATL=%s\n",
+
+    "SATL=1000000000000000000000000000000000000000000
+2025-01-29 17:39:10,150 - INFO - 127.0.0.1 - - [29/Jan/2025 17:39:10] "POST /solve-math-model HTTP/1.1" 200 -
+2025-01-29 17:39:17,970 - INFO - Math problem recognized: SATL=%
+2025-01-29 17:39:40,083 - INFO - Math model solution: SATL=%s\n",
+
+    "SATL=1000000000000000000000000000000000000000000
+2025-01-29 17:39:40,095 - INFO - 127.0.0.1 - - [29/Jan/2025 17:39:40] "POST /solve-math-model HTTP/1.1" 200 -
+2025-01-29 17:39:53,125 - INFO - Math problem recognized: SATL=%
+2025-01-29 17:40:11,873 - INFO - Math model solution: SATL=%s\n",
+
+    "SATL=1000000000000000000000000000000000000000000
+2025-01-29 17:40:11,873 - INFO - 127.0.0.1 - - [29/Jan/2025 17:40:11] "POST /solve-math-model HTTP/1.1" 200 -
+2025-01-29 17:47:56,105 - INFO - 127.0.0.1 - - [29/Jan/2025 17:47:56] "OPTIONS /solve-text-model HTTP/1.1" 200 -
+2025-01-29 17:47:56,378 - INFO - Typed math problem: 1+1=b
+2025-01-29 17:48:12,917 - INFO - Typed math solution: 1+1=b
+
+The sum of the first 100 positive integers is 5050.
+
+The sum of the first 100 positive integers is 5050.
+
+The sum of the first 100 positive integers
+2025-01-29 17:48:12,917 - INFO - 127.0.0.1 - - [29/Jan/2025 17:48:12] "POST /solve-text-model HTTP/1.1" 200 -
+2025-01-29 17:50:08,769 - INFO - 127.0.0.1 - - [29/Jan/2025 17:50:08] "OPTIONS /solve-text-model HTTP/1.1" 200 -
+2025-01-29 17:50:09,034 - INFO - Typed math problem: 1+2=X
+2025-01-29 17:50:23,185 - INFO - Typed math solution: 1+2=X
+
+The answer is 3.
+
+The question is asking for the value of X.
+
+So, X = 3.
+
+Therefore, the value of X is 3.
+
+The answer is 3.
+
+The
+2025-01-29 17:50:23,185 - INFO - 127.0.0.1 - - [29/Jan/2025 17:50:23] "POST /solve-text-model HTTP/1.1" 200 -
+2025-01-29 17:50:46,593 - INFO - 127.0.0.1 - - [29/Jan/2025 17:50:46] "OPTIONS /solve-text-model HTTP/1.1" 200 -
+2025-01-29 17:50:46,906 - INFO - Typed math problem: 1+2=X
+2+5=2X
+2025-01-29 17:50:59,507 - INFO - Typed math solution: 1+2=X
+2+5=2X
+3+7=3X
+4+9=4X
+5+11=5X
+6+13=6X
+7+15=7X
+8+17=8X
+2025-01-29 17:50:59,507 - INFO - 127.0.0.1 - - [29/Jan/2025 17:50:59] "POST /solve-text-model HTTP/1.1" 200 -
+2025-01-29 17:52:13,707 - INFO -  * Detected change in 'd:\\homestudy\\backend\\app.py', reloading
+2025-01-29 17:52:16,525 - INFO -  * Restarting with stat
+2025-01-29 17:52:46,487 - INFO - Loading Hugging Face models...
+2025-01-29 17:53:05,463 - INFO - All models loaded successfully.
+2025-01-29 17:53:05,465 - INFO - Starting Flask API (model-based math solver + OCR).
+2025-01-29 17:53:05,495 - WARNING -  * Debugger is active!
+2025-01-29 17:53:05,505 - INFO -  * Debugger PIN: 812-164-213
+2025-01-29 17:53:05,800 - INFO - 127.0.0.1 - - [29/Jan/2025 17:53:05] "OPTIONS /solve-text-model HTTP/1.1" 200 -
+2025-01-29 17:53:05,804 - INFO - Typed math problem: 1+2=X
+2+5=2X
+2025-01-29 17:53:39,868 - INFO - Typed math solution: 1+2=X
+2+5=2X
+3+7=3X
+4+9=4X
+5+11=5X
+6+13=6X
+7+15=7X
+8+17=8X
+2025-01-29 17:53:39,889 - INFO - 127.0.0.1 - - [29/Jan/2025 17:53:39] "POST /solve-text-model HTTP/1.1" 200 -
+2025-01-29 17:56:23,673 - INFO - Loading Hugging Face models...
+2025-01-29 17:56:43,396 - INFO - All models loaded successfully.
+2025-01-29 17:56:43,398 - INFO - Starting Flask API (model-based math solver + OCR).
+2025-01-29 17:56:43,450 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-29 17:56:43,450 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-29 17:56:43,452 - INFO -  * Restarting with stat
+2025-01-29 17:57:09,692 - INFO - Loading Hugging Face models...
+2025-01-29 17:57:33,181 - INFO - All models loaded successfully.
+2025-01-29 17:57:33,183 - INFO - Starting Flask API (model-based math solver + OCR).
+2025-01-29 17:57:33,208 - WARNING -  * Debugger is active!
+2025-01-29 17:57:33,220 - INFO -  * Debugger PIN: 812-164-213
+2025-01-29 17:57:33,838 - INFO - 127.0.0.1 - - [29/Jan/2025 17:57:33] "OPTIONS /solve-text-model HTTP/1.1" 200 -
+2025-01-29 17:57:34,155 - INFO - Typed math problem: 1+2=X
+2+5=2X
+2025-01-29 17:57:55,860 - INFO - Typed math solution: 1+2=X
+2+5=2X
+3+7=3X
+4+9=4X
+5+11=5X
+6+13=6X
+7+15=7X
+8+17=8X
+2025-01-29 17:57:55,862 - INFO - 127.0.0.1 - - [29/Jan/2025 17:57:55] "POST /solve-text-model HTTP/1.1" 200 -
+2025-01-29 17:58:19,216 - INFO - 127.0.0.1 - - [29/Jan/2025 17:58:19] "OPTIONS /solve-text-model HTTP/1.1" 200 -
+2025-01-29 17:58:19,459 - INFO - Typed math problem: 1+2=3
+2+5=2X
+2025-01-29 17:58:33,409 - INFO - Typed math solution: 1+2=3
+2+5=2X2=4
+3+7=3X3=9
+4+8=4X4=16
+
+So, the sum of the numbers is 1+2+3+4+5+6
+2025-01-29 17:58:33,409 - INFO - 127.0.0.1 - - [29/Jan/2025 17:58:33] "POST /solve-text-model HTTP/1.1" 200 -
+2025-01-29 17:59:29,674 - INFO -  * Detected change in 'd:\\homestudy\\backend\\app.py', reloading
+2025-01-29 17:59:31,666 - INFO -  * Restarting with stat
+2025-01-29 18:00:02,518 - INFO - Loading Hugging Face models...
+2025-01-29 18:09:01,474 - INFO - Loading Hugging Face models...
+2025-01-29 18:51:17,223 - WARNING - Error while downloading from https://cdn-lfs-us-1.hf.co/repos/86/ee/86eeeec91b7c2ba3f89dea4c6b25f9a1236e77d18ffe6e73a0e0d4f502d9bc87/cafbe72210c39b19270cbfce27996afc4383c8a487087bcb91a6290d5ceb8f18?response-content-disposition=inline%3B+filename*%3DUTF-8%27%27model-00001-of-00006.safetensors%3B+filename%3D%22model-00001-of-00006.safetensors%22%3B&Expires=1738177743&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTczODE3Nzc0M319LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2RuLWxmcy11cy0xLmhmLmNvL3JlcG9zLzg2L2VlLzg2ZWVlZWM5MWI3YzJiYTNmODlkZWE0YzZiMjVmOWExMjM2ZTc3ZDE4ZmZlNmU3M2EwZTBkNGY1MDJkOWJjODcvY2FmYmU3MjIxMGMzOWIxOTI3MGNiZmNlMjc5OTZhZmM0MzgzYzhhNDg3MDg3YmNiOTFhNjI5MGQ1Y2ViOGYxOD9yZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPSoifV19&Signature=TXse8oTClTt%7ENORws7WlCr%7E6piLrGU-8p1d0q7vsV3PJ5ILCJkaGSh9H6%7EoXG4wpEPiQHg82FLnKqqAjSJhZl39vhuZv23ckzEeWN57vbJ1UvMV%7E%7EQpAhrJHf24GO%7E%7E0H%7EF5aYYj9zcgqnzEsPN9a%7E2SPpJGgesJczu%7EOILMaZ9kx1EkcUTl%7Ep-QYsFDFuKd3fjKsn-eZ6QglqtWhHE9Z%7EbYkC3TDUusoDoLh5rjU1dHHBqvqHU8RQZ9vnz%7EFuYZbtHsRoAykKa9Fy6TBrt1yyH2TzjkSMomm1%7ERIvMZVNUJO7%7EkjpbM8QbzLVberzxrXmvunH%7EkbLvx%7Ev1sVjm3wQ__&Key-Pair-Id=K24J24Z295AEI9: HTTPSConnectionPool(host='cdn-lfs-us-1.hf.co', port=443): Read timed out.
+Trying to resume download...
+2025-01-29 19:42:42,925 - WARNING - Error while downloading from https://cdn-lfs-us-1.hf.co/repos/86/ee/86eeeec91b7c2ba3f89dea4c6b25f9a1236e77d18ffe6e73a0e0d4f502d9bc87/cafbe72210c39b19270cbfce27996afc4383c8a487087bcb91a6290d5ceb8f18?response-content-disposition=inline%3B+filename*%3DUTF-8%27%27model-00001-of-00006.safetensors%3B+filename%3D%22model-00001-of-00006.safetensors%22%3B&Expires=1738177743&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTczODE3Nzc0M319LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2RuLWxmcy11cy0xLmhmLmNvL3JlcG9zLzg2L2VlLzg2ZWVlZWM5MWI3YzJiYTNmODlkZWE0YzZiMjVmOWExMjM2ZTc3ZDE4ZmZlNmU3M2EwZTBkNGY1MDJkOWJjODcvY2FmYmU3MjIxMGMzOWIxOTI3MGNiZmNlMjc5OTZhZmM0MzgzYzhhNDg3MDg3YmNiOTFhNjI5MGQ1Y2ViOGYxOD9yZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPSoifV19&Signature=TXse8oTClTt%7ENORws7WlCr%7E6piLrGU-8p1d0q7vsV3PJ5ILCJkaGSh9H6%7EoXG4wpEPiQHg82FLnKqqAjSJhZl39vhuZv23ckzEeWN57vbJ1UvMV%7E%7EQpAhrJHf24GO%7E%7E0H%7EF5aYYj9zcgqnzEsPN9a%7E2SPpJGgesJczu%7EOILMaZ9kx1EkcUTl%7Ep-QYsFDFuKd3fjKsn-eZ6QglqtWhHE9Z%7EbYkC3TDUusoDoLh5rjU1dHHBqvqHU8RQZ9vnz%7EFuYZbtHsRoAykKa9Fy6TBrt1yyH2TzjkSMomm1%7ERIvMZVNUJO7%7EkjpbM8QbzLVberzxrXmvunH%7EkbLvx%7Ev1sVjm3wQ__&Key-Pair-Id=K24J24Z295AEI9: [SSL: DECRYPTION_FAILED_OR_BAD_RECORD_MAC] decryption failed or bad record mac (_ssl.c:2559)
+Trying to resume download...
+2025-01-29 20:21:32,295 - WARNING - Error while downloading from https://cdn-lfs-us-1.hf.co/repos/86/ee/86eeeec91b7c2ba3f89dea4c6b25f9a1236e77d18ffe6e73a0e0d4f502d9bc87/cafbe72210c39b19270cbfce27996afc4383c8a487087bcb91a6290d5ceb8f18?response-content-disposition=inline%3B+filename*%3DUTF-8%27%27model-00001-of-00006.safetensors%3B+filename%3D%22model-00001-of-00006.safetensors%22%3B&Expires=1738183366&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTczODE4MzM2Nn19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2RuLWxmcy11cy0xLmhmLmNvL3JlcG9zLzg2L2VlLzg2ZWVlZWM5MWI3YzJiYTNmODlkZWE0YzZiMjVmOWExMjM2ZTc3ZDE4ZmZlNmU3M2EwZTBkNGY1MDJkOWJjODcvY2FmYmU3MjIxMGMzOWIxOTI3MGNiZmNlMjc5OTZhZmM0MzgzYzhhNDg3MDg3YmNiOTFhNjI5MGQ1Y2ViOGYxOD9yZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPSoifV19&Signature=UBqMGAJUjnZBrs9E7wItn-gJoQMY7VNfM3-ZjhRDyk-FaxceHAlSUhwZ1mt8BaS3e-xhnDntRmFAcFUoCtuBZOnQl87vGHuqJdYDibScGMKc1%7Eamd3WcOI3rX29NqaZwWBEoFTZwTCYHJ9qpgPVUqs6LaMXyzFQ7nf6diKDqgmStq8yuHi4aTdIhuy1OPeE75rBaL5KRgH%7EEEfTTELiEJGv4LY4k4vkATcXT9Vb8Mi40Qh5hwhgNdzEBS4fdoW3xp7HXqxP06P2Py3iTbPlCW9H7bI%7E8E9jJXSo5zsiP89zo1ECoUr0i7m5V8mo3VqySYCLc%7EsyTH2Xtkzx5Ww4BRw__&Key-Pair-Id=K24J24Z295AEI9: HTTPSConnectionPool(host='cdn-lfs-us-1.hf.co', port=443): Read timed out.
+Trying to resume download...
+2025-01-29 21:56:58,145 - WARNING - Error while downloading from https://cdn-lfs-us-1.hf.co/repos/86/ee/86eeeec91b7c2ba3f89dea4c6b25f9a1236e77d18ffe6e73a0e0d4f502d9bc87/9f87a5897162ed988cfb0fac13879634b4bab3da5a756b4f9dd2437ef8145e20?response-content-disposition=inline%3B+filename*%3DUTF-8%27%27model-00002-of-00006.safetensors%3B+filename%3D%22model-00002-of-00006.safetensors%22%3B&Expires=1738187583&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTczODE4NzU4M319LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2RuLWxmcy11cy0xLmhmLmNvL3JlcG9zLzg2L2VlLzg2ZWVlZWM5MWI3YzJiYTNmODlkZWE0YzZiMjVmOWExMjM2ZTc3ZDE4ZmZlNmU3M2EwZTBkNGY1MDJkOWJjODcvOWY4N2E1ODk3MTYyZWQ5ODhjZmIwZmFjMTM4Nzk2MzRiNGJhYjNkYTVhNzU2YjRmOWRkMjQzN2VmODE0NWUyMD9yZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPSoifV19&Signature=ksGAevc9iNww5iLyE91UgwJS-cLZ3Lt28fl8BQWxaj8RBksnm8r8ctLXO18Xh5zdz1LOzbvk%7EkM%7EgNaEouq3Zdk7eovg1TD4LGmzAxGjoBUcQnOUnuA19sfOn0-naCqw5Xbc7TlkHtysqWL2AQfXTnvq0ZM0xum4vcyN4CS8lyUqMI6M9XV0RFE96Qihz6-ixIerBftXYeatkpc5BixqhZqytTl%7E7J0NBHJlE5QdmaMKBnKzpz2PJ2dCUtGW70ee5uLszr09ttD0wF-H3HVsQdsH2fGFwsZIAC4ENjF-6aqsG2reWHldtoDAkRLDqXw2IUNt3g7TURlNSGi4-%7EFPnQ__&Key-Pair-Id=K24J24Z295AEI9: HTTPSConnectionPool(host='cdn-lfs-us-1.hf.co', port=443): Read timed out.
+Trying to resume download...
