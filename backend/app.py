@@ -6,9 +6,9 @@ from gtts import gTTS
 from PIL import Image
 import os
 
-# -------------------------------------------------------------------
+# ---------------------------------------------------------
 # 1) CONFIGURE LOGGING
-# -------------------------------------------------------------------
+# ---------------------------------------------------------
 logging.basicConfig(
     filename="app.log",
     level=logging.INFO,
@@ -18,30 +18,31 @@ logging.basicConfig(
 app = Flask(__name__)
 CORS(app)
 
-# -------------------------------------------------------------------
+# ---------------------------------------------------------
 # 2) LOAD HUGGING FACE MODELS
-# -------------------------------------------------------------------
+# ---------------------------------------------------------
 logging.info("Loading Hugging Face models...")
 
-# Example Mistral-like model for math (text-generation).
-# Replace "mistralai/mistral-7b-v0.1" with a valid model from HF if available.
-# PHI-4 pipeline for math
-phi_math_pipeline = pipeline(
+# DeepSeek text-generation pipeline
+deepseek_pipeline = pipeline(
     "text-generation",
-    model="microsoft/phi-4",  # <-- Replace with the correct model name or checkpoint on HF
+    model="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
     max_length=1024,
     do_sample=False
 )
+
 # OCR for printed text
 ocr_pipeline = pipeline(
     "image-to-text",
     model="microsoft/trocr-base-printed"
 )
 
-# Model-based math solver (original language model)
+# Original text-generation model (for math)
 math_model_pipeline = pipeline(
     "text-generation",
-    model="microsoft/rho-math-1b-v0.1"
+    model="microsoft/rho-math-1b-v0.1",
+    max_length=1024,
+    do_sample=False
 )
 
 # Question Answering
@@ -64,50 +65,51 @@ translation = pipeline(
 
 logging.info("All models loaded successfully.")
 
-# -------------------------------------------------------------------
-# 3.1) ROUTE: SOLVE MATH WITH PHI-4
-# -------------------------------------------------------------------
-@app.route("/solve-math-phi", methods=["POST"])
-def solve_math_phi():
+# ---------------------------------------------------------
+# NEW ROUTE: /deepseek
+# ---------------------------------------------------------
+@app.route("/deepseek", methods=["POST"])
+def deepseek():
     """
-    1. Extract text from image (OCR)
-    2. Feed recognized text to the Phi-4 math model pipeline
-    3. Return the generated solution
-
-    Endpoint: POST /solve-math-phi
-    Form-Data: file=@image.png
+    Demonstrates usage of the DeepSeek pipeline with a simple
+    "messages" format, similar to a chat. Expects JSON like:
+      {
+        "messages": [
+          {"role": "user", "content": "Who are you?"}
+        ]
+      }
     """
-    if "file" not in request.files:
-        logging.warning("No file provided in /solve-math-phi request.")
-        return jsonify({"error": "No file provided"}), 400
+    data = request.json or {}
+    messages = data.get("messages", [])
 
-    file = request.files["file"]
-    if file.filename == "":
-        logging.warning("Empty file in /solve-math-phi request.")
-        return jsonify({"error": "Empty file"}), 400
+    if not isinstance(messages, list) or len(messages) == 0:
+        return jsonify({"error": "No messages provided"}), 400
 
+    # 1) Combine messages into a single input string
+    #    (A simple approach: just join content from 'user' roles, etc.)
+    user_prompts = []
+    for msg in messages:
+        if msg.get("role") == "user":
+            user_prompts.append(msg.get("content", ""))
+
+    if not user_prompts:
+        return jsonify({"error": "No user content found in messages"}), 400
+
+    final_input = "\n".join(user_prompts)
+
+    # 2) Generate with the DeepSeek pipeline
     try:
-        # 1) OCR
-        image = Image.open(file).convert("RGB")
-        ocr_result = ocr_pipeline(image)[0]["generated_text"]
-        math_problem = ocr_result.strip()
-        logging.info(f"[PHI-4] Math problem recognized: {math_problem}")
-
-        # 2) Generate solution using the PHI-4 pipeline
-        generation = phi_math_pipeline(math_problem, max_length=1024, do_sample=False)
-        solution_text = generation[0]["generated_text"]
-        logging.info(f"[PHI-4] Math solution: {solution_text}")
-
-        # 3) Return recognized text & model's solution
-        return jsonify({"problem": math_problem, "solution": solution_text})
+        generation = deepseek_pipeline(final_input)
+        # Typically returns [{"generated_text": "..."}]
+        result_text = generation[0].get("generated_text", "")
+        return jsonify({"input": final_input, "output": result_text})
     except Exception as e:
-        logging.error(f"Error in /solve-math-phi: {str(e)}")
+        logging.error(f"Error in /deepseek: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
-
-# -------------------------------------------------------------------
+# ---------------------------------------------------------
 # 3) ROUTE: EXTRACT TEXT ONLY (OCR)
-# -------------------------------------------------------------------
+# ---------------------------------------------------------
 @app.route("/extract-text", methods=["POST"])
 def extract_text():
     if "file" not in request.files:
@@ -129,9 +131,9 @@ def extract_text():
         logging.error(f"Error in /extract-text: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
-# -------------------------------------------------------------------
+# ---------------------------------------------------------
 # 4) ROUTE: SOLVE MATH FROM IMAGE (MODEL-BASED)
-# -------------------------------------------------------------------
+# ---------------------------------------------------------
 @app.route("/solve-math-model", methods=["POST"])
 def solve_math_model():
     if "file" not in request.files:
@@ -158,10 +160,9 @@ def solve_math_model():
         logging.error(f"Error in /solve-math-model: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
-
-# -------------------------------------------------------------------
+# ---------------------------------------------------------
 # 5) ROUTE: QUESTION ANSWERING
-# -------------------------------------------------------------------
+# ---------------------------------------------------------
 @app.route("/qa", methods=["POST"])
 def qa():
     data = request.json or {}
@@ -181,9 +182,9 @@ def qa():
     logging.warning("Invalid QA request: missing context or question.")
     return jsonify({"error": "Provide context and question"}), 400
 
-# -------------------------------------------------------------------
+# ---------------------------------------------------------
 # 6) ROUTE: SUMMARIZATION
-# -------------------------------------------------------------------
+# ---------------------------------------------------------
 @app.route("/summarize", methods=["POST"])
 def summarize_text():
     data = request.json or {}
@@ -202,9 +203,9 @@ def summarize_text():
     logging.warning("No text provided for summarization.")
     return jsonify({"error": "Provide text to summarize"}), 400
 
-# -------------------------------------------------------------------
+# ---------------------------------------------------------
 # 7) ROUTE: TRANSLATION
-# -------------------------------------------------------------------
+# ---------------------------------------------------------
 @app.route("/translate", methods=["POST"])
 def translate_text():
     data = request.json or {}
@@ -223,9 +224,9 @@ def translate_text():
     logging.warning("No text provided for translation.")
     return jsonify({"error": "Provide text to translate"}), 400
 
-# -------------------------------------------------------------------
+# ---------------------------------------------------------
 # 8) ROUTE: TEXT-TO-SPEECH (TTS)
-# -------------------------------------------------------------------
+# ---------------------------------------------------------
 @app.route("/tts", methods=["POST"])
 def tts():
     from gtts import gTTS
@@ -248,9 +249,9 @@ def tts():
     logging.warning("No text provided for TTS.")
     return jsonify({"error": "Provide text for TTS"}), 400
 
-# -------------------------------------------------------------------
+# ---------------------------------------------------------
 # 9) ROUTE: SOLVE TYPED MATH PROBLEM (Original Model)
-# -------------------------------------------------------------------
+# ---------------------------------------------------------
 @app.route("/solve-text-model", methods=["POST"])
 def solve_text_model():
     data = request.json or {}
@@ -271,9 +272,9 @@ def solve_text_model():
         logging.error(f"Error in /solve-text-model: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
-# -------------------------------------------------------------------
+# ---------------------------------------------------------
 # 10) MAIN
-# -------------------------------------------------------------------
+# ---------------------------------------------------------
 if __name__ == "__main__":
-    logging.info("Starting Flask API (model-based math solver + OCR + Mistral).")
+    logging.info("Starting Flask API (DeepSeek + OCR + QA, Summarization, TTS, etc.).")
     app.run(debug=True)

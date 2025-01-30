@@ -36,8 +36,9 @@ export default function SolveMathModelPage() {
   // -----------------------
   const [selectedModel, setSelectedModel] = useState("default"); 
   /**
-   * "default" => calls /solve-math-model or /solve-text-model
-   * "mistral" => calls /solve-math-mistral or /solve-text-mistral
+   * "default" => calls default math endpoints
+   * "deepseek" => uses /extract-text + /deepseek for images,
+   *               or /deepseek for typed text
    */
 
   // -----------------------
@@ -80,36 +81,21 @@ export default function SolveMathModelPage() {
     setShowHistory((prev) => !prev);
   };
 
-  // ============================================================
-  // HELPER: DETERMINE ENDPOINTS
-  // ============================================================
+  // -----------------------
+  // HELPER: Solve with "Default" or "DeepSeek"
+  // -----------------------
   /**
-   * Returns the appropriate endpoint for image-based solving
-   * based on the selected model.
-   */
-  const getImageSolveEndpoint = () => {
-    if (selectedModel === "mistral") {
-      return "http://localhost:5000/solve-math-mistral";
-    } else if (selectedModel === "phi") {
-      return "http://localhost:5000/solve-math-phi";
-    }
-    return "http://localhost:5000/solve-math-model"; // default
-  };
-
-  /**
-   * Returns the appropriate endpoint for typed-text solving
-   * based on the selected model.
+   * If "default":
+   *   /solve-math-model (images)
+   *   /solve-text-model (typed)
    *
-   * If you haven't created /solve-text-mistral, you can skip "mistral" logic here.
+   * If "deepseek" for image:
+   *   1) /extract-text
+   *   2) pass recognized text to /deepseek (as messages)
+   *
+   * If "deepseek" for typed:
+   *   directly call /deepseek with messages
    */
-  const getTextSolveEndpoint = () => {
-    if (selectedModel === "mistral") {
-      return "http://localhost:5000/solve-text-mistral";
-    } else if (selectedModel === "phi") {
-      return "http://localhost:5000/solve-text-phi";
-    }
-    return "http://localhost:5000/solve-text-model";
-  };
 
   // ============================================================
   // CAMERA FUNCTIONS
@@ -250,17 +236,38 @@ export default function SolveMathModelPage() {
     setSolution("");
 
     try {
-      const formData = new FormData();
-      formData.append("file", file);
+      if (selectedModel === "default") {
+        // Directly call /solve-math-model
+        const formData = new FormData();
+        formData.append("file", file);
 
-      // Choose the endpoint based on the selected model
-      const endpoint = getImageSolveEndpoint();
+        const resp = await axios.post("http://localhost:5000/solve-math-model", formData, {
+          headers: { "Content-Type": "multipart/form-data" },
+        });
+        setRecognizedProblem(resp.data.problem);
+        setSolution(resp.data.solution);
 
-      const response = await axios.post(endpoint, formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
-      setRecognizedProblem(response.data.problem);
-      setSolution(response.data.solution);
+      } else if (selectedModel === "deepseek") {
+        // Step 1: /extract-text to get recognized text
+        const formData = new FormData();
+        formData.append("file", file);
+
+        const ocrResp = await axios.post("http://localhost:5000/extract-text", formData, {
+          headers: { "Content-Type": "multipart/form-data" },
+        });
+        const recognizedText = ocrResp.data.text;
+
+        // Step 2: pass recognized text as a user message to /deepseek
+        const messages = [
+          { role: "user", content: recognizedText }
+        ];
+        const dsResp = await axios.post("http://localhost:5000/deepseek", { messages });
+        const output = dsResp.data.output || "";
+
+        setRecognizedProblem(recognizedText);
+        setSolution(output);
+      }
+
     } catch (err) {
       setError(err.response?.data?.error || "An error occurred.");
     } finally {
@@ -273,7 +280,7 @@ export default function SolveMathModelPage() {
   // ============================================================
   const handleSolveFromText = async () => {
     if (!typedProblem.trim()) {
-      setError("Please enter a math problem.");
+      setError("Please enter a math problem or question.");
       return;
     }
 
@@ -283,14 +290,26 @@ export default function SolveMathModelPage() {
     setSolution("");
 
     try {
-      // Choose the endpoint based on the selected model
-      const endpoint = getTextSolveEndpoint();
+      if (selectedModel === "default") {
+        // /solve-text-model
+        const resp = await axios.post("http://localhost:5000/solve-text-model", {
+          problem: typedProblem,
+        });
+        setRecognizedProblem(resp.data.problem);
+        setSolution(resp.data.solution);
 
-      const response = await axios.post(endpoint, {
-        problem: typedProblem,
-      });
-      setRecognizedProblem(response.data.problem);
-      setSolution(response.data.solution);
+      } else if (selectedModel === "deepseek") {
+        // Directly pass typed text as user content
+        const messages = [
+          { role: "user", content: typedProblem }
+        ];
+        const dsResp = await axios.post("http://localhost:5000/deepseek", { messages });
+        const output = dsResp.data.output || "";
+
+        setRecognizedProblem(typedProblem);
+        setSolution(output);
+      }
+
     } catch (err) {
       setError(err.response?.data?.error || "An error occurred.");
     } finally {
@@ -303,7 +322,7 @@ export default function SolveMathModelPage() {
   // ============================================================
   const handleSaveExercise = () => {
     if (!recognizedProblem && !solution) {
-      setError("Solve a math problem first to save it.");
+      setError("No solution to save.");
       return;
     }
 
@@ -316,6 +335,7 @@ export default function SolveMathModelPage() {
     };
     setExercises([newExercise, ...exercises]);
 
+    // Reset states
     setFile(null);
     setTypedProblem("");
     setRecognizedProblem("");
@@ -336,7 +356,7 @@ export default function SolveMathModelPage() {
     setError("");
     setCrop({ unit: "%", width: 50 });
     setCompletedCrop(null);
-    setShowHistory(false); // Close drawer if open
+    setShowHistory(false);
   };
 
   // ============================================================
@@ -346,6 +366,7 @@ export default function SolveMathModelPage() {
     <div className="relative flex h-screen w-full bg-gray-900">
       {/* MAIN CONTENT */}
       <div className="flex-1 flex flex-col items-center p-4 overflow-auto">
+        {/* History Toggle Button */}
         <button
           onClick={toggleHistoryDrawer}
           className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-3 rounded-full mb-6 hover:scale-105 transition-transform duration-200 shadow-lg hover:shadow-xl"
@@ -371,14 +392,14 @@ export default function SolveMathModelPage() {
               Default
             </button>
             <button
-              onClick={() => setSelectedModel("phi")}
+              onClick={() => setSelectedModel("deepseek")}
               className={`px-4 py-2 rounded-full transition-all ${
-                selectedModel === "phi"
+                selectedModel === "deepseek"
                   ? "bg-gradient-to-r from-pink-500 to-purple-600 text-white"
                   : "bg-gray-700 text-gray-300 hover:bg-gray-600"
               }`}
             >
-              Phi-4
+              DeepSeek
             </button>
           </div>
 
@@ -473,7 +494,7 @@ export default function SolveMathModelPage() {
             <h2 className="text-lg font-bold mb-3 text-white">✍️ Text Solve</h2>
             <textarea
               className="w-full bg-gray-800 text-white p-3 rounded-lg border-2 border-gray-600 focus:border-purple-400 outline-none placeholder-gray-400"
-              placeholder="Enter math problem..."
+              placeholder="Enter math problem or question..."
               value={typedProblem}
               onChange={(e) => setTypedProblem(e.target.value)}
               rows="3"
@@ -496,11 +517,15 @@ export default function SolveMathModelPage() {
             <div className="bg-gray-700 rounded-xl p-4 mb-4 space-y-3 animate-fade-in">
               <div className="space-y-2">
                 <h3 className="text-purple-300 font-semibold">Problem</h3>
-                <p className="text-white bg-gray-800 p-3 rounded-lg">{recognizedProblem}</p>
+                <p className="text-white bg-gray-800 p-3 rounded-lg">
+                  {recognizedProblem}
+                </p>
               </div>
               <div className="space-y-2">
                 <h3 className="text-green-300 font-semibold">Solution</h3>
-                <p className="text-white bg-gray-800 p-3 rounded-lg whitespace-pre-wrap">{solution}</p>
+                <p className="text-white bg-gray-800 p-3 rounded-lg whitespace-pre-wrap">
+                  {solution}
+                </p>
               </div>
               <button
                 onClick={handleSaveExercise}
@@ -554,7 +579,7 @@ export default function SolveMathModelPage() {
               <p className="text-white font-medium truncate">{ex.problem}</p>
               <p className="text-gray-400 text-sm truncate">{ex.solution}</p>
               <div className="flex justify-between items-center mt-2">
-                <span className="text-xs text-purple-300">{ex.model}</span>
+                <span className="text-xs text-purple-300">Model: {ex.model}</span>
                 <span className="text-xs text-gray-500">
                   {new Date(ex.date).toLocaleDateString()}
                 </span>
@@ -563,6 +588,9 @@ export default function SolveMathModelPage() {
           ))}
         </div>
       </div>
+
+      {/* Hidden canvas for camera snapshot */}
+      <canvas ref={canvasRef} style={{ display: "none" }} />
     </div>
   );
 }
