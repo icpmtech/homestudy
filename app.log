@@ -17,3 +17,42 @@ Trying to resume download...
 Trying to resume download...
 2025-01-31 09:14:22,607 - WARNING - Error while downloading from https://cdn-lfs-us-1.hf.co/repos/80/3b/803bf3a0c970ed5c554d34586697cf1613396ec4158c96d5290742c7421a5d88/58858233513d76b8703e72eed6ce16807b523328188e13329257fb9594462945?response-content-disposition=inline%3B+filename*%3DUTF-8%27%27model.safetensors%3B+filename%3D%22model.safetensors%22%3B&Expires=1738273712&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTczODI3MzcxMn19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2RuLWxmcy11cy0xLmhmLmNvL3JlcG9zLzgwLzNiLzgwM2JmM2EwYzk3MGVkNWM1NTRkMzQ1ODY2OTdjZjE2MTMzOTZlYzQxNThjOTZkNTI5MDc0MmM3NDIxYTVkODgvNTg4NTgyMzM1MTNkNzZiODcwM2U3MmVlZDZjZTE2ODA3YjUyMzMyODE4OGUxMzMyOTI1N2ZiOTU5NDQ2Mjk0NT9yZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPSoifV19&Signature=owFfOIpCy7yYpGJx5PwkEGEIed-jljzXiOJYMSCB4WnnthHyFclQMK0ylqMBXdr2pvQBgRBnVS6SwED5XVKdC9AEtfIeZTntgWpkPRxG85SeJaQ6s26ZitqgRRkd0wyP2nLupfNsfh03OCgQutFKC7tU3EwVsbD-M7x46XZl-zJ4PwUxWhAexhNJRESyyc-O6xwvEehSFwfrWayg22h-CC6whIxlLutOA1bRjtGKPJ8zlqzF9uqcVlttrB%7EwEfjk9Z4UF1v6jE5BBMaKUd7fd66ll%7ENhh3j6%7E8UktQ8FBH2dw507lXyXqzRtD6TrQ7Ps4Nhpt1wjM5MKhkUqUGFkVQ__&Key-Pair-Id=K24J24Z295AEI9: HTTPSConnectionPool(host='cdn-lfs-us-1.hf.co', port=443): Read timed out.
 Trying to resume download...
+2025-01-31 10:11:31,934 - INFO - All models loaded successfully.
+2025-01-31 10:11:31,941 - INFO - Starting Flask API (model-based math solver + OCR + Mistral).
+2025-01-31 10:11:32,016 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-31 10:11:32,016 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-31 10:11:32,020 - INFO -  * Restarting with stat
+2025-01-31 10:12:07,673 - INFO - Loading Hugging Face models...
+2025-01-31 10:21:42,287 - INFO - Loading Hugging Face models...
+2025-01-31 10:22:16,819 - INFO - All models loaded successfully.
+2025-01-31 10:22:16,825 - INFO - Starting Flask API (DeepSeek + OCR + QA, Summarization, TTS, etc.).
+2025-01-31 10:22:16,880 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-31 10:22:16,880 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-31 10:22:16,884 - INFO -  * Restarting with stat
+2025-01-31 10:22:46,808 - INFO - Loading Hugging Face models...
+2025-01-31 10:26:55,041 - INFO - Loading Hugging Face models...
+2025-01-31 10:27:26,699 - INFO - All models loaded successfully.
+2025-01-31 10:27:26,705 - INFO - Starting Flask API (DeepSeek + OCR + QA, Summarization, TTS, etc.).
+2025-01-31 10:27:26,766 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-31 10:27:26,767 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-31 10:27:26,770 - INFO -  * Restarting with stat
+2025-01-31 10:27:56,857 - INFO - Loading Hugging Face models...
+2025-01-31 10:44:50,172 - INFO - Loading Hugging Face models...
+2025-01-31 10:45:30,564 - INFO - All models loaded successfully.
+2025-01-31 10:45:30,569 - INFO - Starting Flask API (DeepSeek + OCR + QA, Summarization, TTS, etc.).
+2025-01-31 10:45:30,663 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-31 10:45:30,663 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-31 10:45:30,667 - INFO -  * Restarting with stat
+2025-01-31 10:46:03,178 - INFO - Loading Hugging Face models...
+2025-01-31 11:56:37,743 - INFO - Loading Hugging Face models...
+2025-01-31 11:57:21,189 - INFO - All models loaded successfully.
+2025-01-31 11:57:21,194 - INFO - Starting Flask API (DeepSeek + OCR + QA, Summarization, TTS, etc.).
+2025-01-31 11:57:21,288 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-31 11:57:21,289 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-31 11:57:21,292 - INFO -  * Restarting with stat
+2025-01-31 11:57:52,578 - INFO - Loading Hugging Face models...

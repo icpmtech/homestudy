@@ -348,3 +348,42 @@ Trying to resume download...
 2025-01-29 21:56:58,145 - WARNING - Error while downloading from https://cdn-lfs-us-1.hf.co/repos/86/ee/86eeeec91b7c2ba3f89dea4c6b25f9a1236e77d18ffe6e73a0e0d4f502d9bc87/9f87a5897162ed988cfb0fac13879634b4bab3da5a756b4f9dd2437ef8145e20?response-content-disposition=inline%3B+filename*%3DUTF-8%27%27model-00002-of-00006.safetensors%3B+filename%3D%22model-00002-of-00006.safetensors%22%3B&Expires=1738187583&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTczODE4NzU4M319LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2RuLWxmcy11cy0xLmhmLmNvL3JlcG9zLzg2L2VlLzg2ZWVlZWM5MWI3YzJiYTNmODlkZWE0YzZiMjVmOWExMjM2ZTc3ZDE4ZmZlNmU3M2EwZTBkNGY1MDJkOWJjODcvOWY4N2E1ODk3MTYyZWQ5ODhjZmIwZmFjMTM4Nzk2MzRiNGJhYjNkYTVhNzU2YjRmOWRkMjQzN2VmODE0NWUyMD9yZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPSoifV19&Signature=ksGAevc9iNww5iLyE91UgwJS-cLZ3Lt28fl8BQWxaj8RBksnm8r8ctLXO18Xh5zdz1LOzbvk%7EkM%7EgNaEouq3Zdk7eovg1TD4LGmzAxGjoBUcQnOUnuA19sfOn0-naCqw5Xbc7TlkHtysqWL2AQfXTnvq0ZM0xum4vcyN4CS8lyUqMI6M9XV0RFE96Qihz6-ixIerBftXYeatkpc5BixqhZqytTl%7E7J0NBHJlE5QdmaMKBnKzpz2PJ2dCUtGW70ee5uLszr09ttD0wF-H3HVsQdsH2fGFwsZIAC4ENjF-6aqsG2reWHldtoDAkRLDqXw2IUNt3g7TURlNSGi4-%7EFPnQ__&Key-Pair-Id=K24J24Z295AEI9: HTTPSConnectionPool(host='cdn-lfs-us-1.hf.co', port=443): Read timed out.
 Trying to resume download...
 2025-01-29 21:58:36,077 - INFO - Loading Hugging Face models...
+2025-01-31 12:03:13,931 - INFO - Loading Hugging Face models...
+2025-01-31 12:03:49,121 - INFO - All models loaded successfully.
+2025-01-31 12:03:49,152 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-31 12:03:49,152 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-31 12:05:43,756 - INFO - 127.0.0.1 - - [31/Jan/2025 12:05:43] "OPTIONS /summarize HTTP/1.1" 200 -
+2025-01-31 12:05:43,981 - INFO - Summarization request received.
+2025-01-31 12:05:53,074 - INFO - Summarization completed.
+2025-01-31 12:05:53,075 - INFO - 127.0.0.1 - - [31/Jan/2025 12:05:53] "POST /summarize HTTP/1.1" 200 -
+2025-01-31 12:06:03,108 - INFO - 127.0.0.1 - - [31/Jan/2025 12:06:03] "OPTIONS /translate HTTP/1.1" 200 -
+2025-01-31 12:06:03,376 - INFO - Translation request received.
+2025-01-31 12:06:14,218 - INFO - Translation completed.
+2025-01-31 12:06:14,219 - INFO - 127.0.0.1 - - [31/Jan/2025 12:06:14] "POST /translate HTTP/1.1" 200 -
+2025-01-31 12:06:32,565 - INFO - 127.0.0.1 - - [31/Jan/2025 12:06:32] "OPTIONS /solve-text-model HTTP/1.1" 200 -
+2025-01-31 12:06:32,833 - INFO - Typed math problem: 2+2=x
+2025-01-31 12:07:04,099 - INFO - Typed math solution: 2+2=x
+
+2+2=x
+
+4=x
+
+So, the value of x is 4.
+
+The value of x is 4.
+
+The value of x is 4.
+
+The value of x is 4
+2025-01-31 12:07:04,111 - INFO - 127.0.0.1 - - [31/Jan/2025 12:07:04] "POST /solve-text-model HTTP/1.1" 200 -
+2025-01-31 12:07:16,157 - INFO - 127.0.0.1 - - [31/Jan/2025 12:07:16] "OPTIONS /deepseek HTTP/1.1" 200 -
+2025-01-31 12:08:14,940 - INFO - 127.0.0.1 - - [31/Jan/2025 12:08:14] "POST /deepseek HTTP/1.1" 200 -
+2025-01-31 12:13:14,127 - INFO - Extracted text: ***
+2025-01-31 12:13:14,129 - INFO - 127.0.0.1 - - [31/Jan/2025 12:13:14] "POST /extract-text HTTP/1.1" 200 -
+2025-01-31 12:13:14,140 - INFO - 127.0.0.1 - - [31/Jan/2025 12:13:14] "OPTIONS /deepseek HTTP/1.1" 200 -
+2025-01-31 12:13:24,224 - INFO - 127.0.0.1 - - [31/Jan/2025 12:13:24] "POST /deepseek HTTP/1.1" 200 -
+2025-01-31 12:14:54,072 - INFO - Extracted text: 9-3-1-1-
+2025-01-31 12:14:54,072 - INFO - 127.0.0.1 - - [31/Jan/2025 12:14:54] "POST /extract-text HTTP/1.1" 200 -
+2025-01-31 12:14:54,076 - INFO - 127.0.0.1 - - [31/Jan/2025 12:14:54] "OPTIONS /deepseek HTTP/1.1" 200 -
+2025-01-31 12:22:56,645 - INFO - 127.0.0.1 - - [31/Jan/2025 12:22:56] "POST /deepseek HTTP/1.1" 200 -
